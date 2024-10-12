@@ -13,18 +13,42 @@ int prost(int x)
     }
     return flag;
 }
+int sumnum(int x)
+{   
+    x = abs(x);
+    int sum = 0;
+    while (x != 0)
+    {
+        sum += (x % 10);
+        x /= 10;
+    }
+    return sum;
+}
+int multnum(int x)
+{   
+    x = abs(x);
+    int mult = 1;
+    while (x != 0)
+    {
+        mult *= (x % 10);
+        x /= 10;
+    }
+    return mult;
+}
 
 void sort(int mas[], int const n)
 {
-    for (int i = 0; i < n - 1; i++)
+    int timenum;
+    for (int i = 0; i < n; i++)
     {
-        for (int j = i + 1; j < n; j++)
+        for (int j = i + 1 ; j < (n-1); j++)
         {
             if (mas[i] > mas[j])
             {
-                int tmp = mas[j];
+                timenum = mas[i];
                 mas[i] = mas[j];
-                mas[j] = tmp;
+                mas[j] = timenum;
+
             }
         }
             
@@ -47,10 +71,9 @@ int main()
    int n1;
    cin >> n1;
    int* msv = new int[n1];
-   bool flag = false;
    for (int i = 0; i < n1; i++)
    {
-    cin >> msv[i];
+        cin >> msv[i];
    }
    print(msv, n1);
    int simplec = 0;
@@ -64,9 +87,9 @@ int main()
 
     if (simplec == 0)
     {
-        sort(msv, n1);
+        sort(msv, n1 + 1 );
     }
-    print(msv, n1);
+    print(msv, n1); // Переделать сортировку
 
 
 
