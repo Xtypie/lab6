@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-int prost(int x)
+int prost(int x) //проверка на простое число
 {
     bool flag = true;
     for (int i = 2; i <= sqrt(x); i++) 
@@ -13,7 +13,7 @@ int prost(int x)
     }
     return flag;
 }
-int sumnum(int x)
+int sumnum(int x) //сумма цифр числа
 {   
     x = abs(x);
     int sum = 0;
@@ -24,7 +24,7 @@ int sumnum(int x)
     }
     return sum;
 }
-int multnum(int x)
+int multnum(int x) //произведение цифр числа
 {   
     x = abs(x);
     int mult = 1;
@@ -36,7 +36,7 @@ int multnum(int x)
     return mult;
 }
 
-int povtor(int mas[], int const n)
+int povtor(int mas[], int const n) //проверка на наличие повтора в массиве
 {
     bool flag = false;
     for (int i = 0; i < n; i++)
@@ -49,7 +49,7 @@ int povtor(int mas[], int const n)
     return flag;
 }
 
-void sort(int mas[], int const n)
+void sort(int mas[], int const n) //сортировка
 {
     int timenum;
     for (int i = 0; i < n; i++)
@@ -108,7 +108,7 @@ void sortmult(int mas[], int masmult[], int const n) // сортировка п�
 
 
 
-void print(int mas[], int const n)
+void print(int mas[], int const n) // вывод массива
 {
     for (int i = 0; i < n; i++)
     {
@@ -121,9 +121,11 @@ int main()
 {   
     //ЗАДАНИЕ 1
 
-   /*int n1;
+   int n1;
+   cout << "enter num of massive elements" << endl;
    cin >> n1;
    int* msv = new int[n1];
+   cout << "enter elements of massive" << endl;
    for (int i = 0; i < n1; i++) {cin >> msv[i];}
 
    print(msv, n1);
@@ -131,17 +133,18 @@ int main()
    for (int i = 0; i < n1 - 1; i++) {if (prost(msv[i])) {simplec++;}}
 
    if (simplec == 0) {sort(msv, n1); print(msv, n1);}
-   else{cout << "simple nums in massive" << endl;} */
+   else{cout << "simple nums in massive" << endl;} 
 
 
     //ЗАДАНИЕ 2
 
-    /*int n2;
+    int n2;
+    cout << "enter num of massive elements" << endl;
     cin >> n2;
     int* msv2 = new int[n2];
     int* msvsum = new int[n2]; //массив с суммами цифр числа
     int* msvmult = new int[n2]; //массив с проезвидением цифр числа
-
+    cout << "enter massive elements" << endl;
     for (int i = 0; i < n2; i++) {cin >> msv2[i];}
     for (int i = 0; i < n2; i++) {msvsum[i] = sumnum(msv2[i]); msvmult[i] = multnum(msv2[i]);}
     sort(msvsum, n2);
@@ -159,7 +162,7 @@ int main()
     {
         sort(msv2, n2);
     }
-    print(msv2, n2);*/
+    print(msv2, n2);
 
     // ЗАДАНИЕ 3
 
@@ -167,8 +170,10 @@ int main()
     k = 1;
     mx = 0;
     str = 0;
+    cout << "enter row and col" << endl;
     cin >> row >> col;
     int matr[20][20];
+    cout << "enter matrice elements" << endl;
     for (int i = 0; i < row; i++)
     {
         if (k > mx){mx = k; str = i;}
@@ -184,28 +189,10 @@ int main()
             for (int j = 0; j < col; j++) {matr[i][j] = mx;}
             break;
         }
-
     }
     for (int i = 0; i < row; i++)
     {
-        for (int j = 0; j < col; j++)
-        {
-            cout << matr[i][j] << " ";
-        }
+        for (int j = 0; j < col; j++) {cout << matr[i][j] << " ";}
         cout << endl;
     }
-
-    
-
-
-
-    
-    
-
-
-   
-   
-
-
-
 }
