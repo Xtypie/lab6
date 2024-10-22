@@ -165,20 +165,33 @@ int main()
 
     int row, col, k, mx, str;
     k = 1;
-    mx, str = 0;
+    mx = 0;
+    str = 0;
     cin >> row >> col;
     int matr[20][20];
     for (int i = 0; i < row; i++)
     {
-        if (k > mx){mx = max_element(k, mx); str = i;}
+        if (k > mx){mx = k; str = i;}
         k = 1;
         for (int j = 0; j < col; j++){cin >> matr[i][j]; k *= matr[i][j];}
 
     }
-    for (int i = 0; i < col; i ++) {matr[str][i] = mx;}
-    for (int i = 0; i < row; i++) 
+    
+    for (int i = 0; i < row; i ++)
     {
-        for (int j = 0; j < col; j++){cout << matr[i][j];}
+        if (i = (str - 1))
+        {
+            for (int j = 0; j < col; j++) {matr[i][j] = mx;}
+            break;
+        }
+
+    }
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < col; j++)
+        {
+            cout << matr[i][j] << " ";
+        }
         cout << endl;
     }
 
