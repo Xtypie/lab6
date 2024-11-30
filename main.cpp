@@ -5,15 +5,12 @@ using namespace std;
 
 int prost(int x) //проверка на простое число
 {
-    bool flag = true;
     for (int i = 2; i <= sqrt(x); i++) 
     {
         if (x % i == 0) 
-        {
-            flag = false;
-        }
+            return false;
     }
-    return flag;
+    return true;
 }
 int sumnum(int x) //сумма цифр числа
 {   
@@ -45,7 +42,7 @@ int povtor(int mas[], int const n) //проверка на наличие пов
     {
         for (int j = i+1; j<n; j++)
         {
-            if (mas[i] = mas[j]){flag = true;}
+            if (mas[i] == mas[j]){flag = true;}
         }
     }
     return flag;
@@ -72,14 +69,13 @@ void sort(int mas[], int const n) //сортировка
 
 void sortsum(int mas[], int massum[], int const n) // сортировка по сумме цифр числа
 {
-    int timenum;
     for (int i = 0; i < n; i++)
     {
         for (int j = 0 ; j < n; j++)
         {
             if (massum[i] == sumnum(mas[j]) )
             {
-                timenum = mas[i];
+                int timenum = mas[i];
                 mas[i] = mas[j];
                 mas[j] = timenum;
 
